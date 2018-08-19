@@ -1,0 +1,1 @@
+robocopy "C:\Users\Jeff\Pictures" "\\ms\Photos" /S /MIR

@@ -1,0 +1,1 @@
+robocopy "C:\Users\smith\Music\iTunes\iTunes Media\Music" "\\Media\iTunes\Music" /S
