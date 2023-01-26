@@ -1,0 +1,80 @@
+#!/bin/zsh
+
+# format_time() {
+#     $elapsedSeconds
+
+#     hour=$((elapsedSeconds / 3600))
+#     remanderMinutes=$((elapsedSeconds % 3600))
+#     minutes=$((remanderMinutes / 60))
+#     second=$((minutes % 60)) 
+
+#     #$((printf %2d $hour):(printf %2d $minutes):(printf %2d %2d $second))
+# }
+
+# destinationPath="/Volumes/TimeMachineExternal/xenomorph"
+# dev="Developer"
+# desktop="Desktop"
+# download="Downloads"
+# document="Documents"
+# movie="Movies"
+# music="Music"
+# picture="Pirctures"
+# public="Public"
+# src="src"
+# library="Libarary"
+# ssh=".ssh"
+# #sourcePath="~/"
+# #mount_smbfs $sourcePath/Developer /Volumes/TimeMachineExternal/xenomorph/Developer
+# echo Starting scripts folder
+# SECONDS=0
+# #rsync -rv ~/$dev/ $destinationPath/$dev/
+# #rsync -rv ~/$download/ $destinationPath/$download/
+# #rsync -rv ~/$desktop/ $destinationPath/$desktop/
+# #rsync -rv ~/$document/ $destinationPath/$document/
+# #rsync -rv ~/$movie/ $destinationPath/$movie/
+# #rsync -rv ~/$music/ $destinationPath/$music/
+# #rsync -rv ~/$picture/ $destinationPath/$picture/
+# #rsync -rv ~/$public/ $destinationPath/$public/
+# rsync -rv ~/$src/ $destinationPath/$src/
+# #rsync -rv ~/$library/ $destinationPath/$library/
+# #rsync -rv ~/$ssh/ $destinationPath/$ssh/
+# #cp ~/.zsh* $destinationPath/
+
+#echo Starting Developer folder
+# Add more folders to be copied
+#SECONDS=33825
+SECONDS=3665
+echo $SECONDS
+hours=$(($SECONDS / 3600))
+remanderMinutes=$(($SECONDS % 3600))
+minutes=$(($remanderMinutes / 60))
+remander_seconds=$(($remanderMinutes % 60))
+second=$(($remander_seconds % 60))
+
+Formated_hours=$(printf '%02d' $hours)
+formated_minutes=$(printf '%02d' $minutes)
+formated_seconds=$(printf '%02d' $second)
+
+echo ---------------------------------------------
+echo hours: $hours
+echo remaining minutes: $remanderMinutes
+echo min: $minutes
+echo remaining minutes: $remander_seconds
+echo sec: $second
+echo ---------------------------------------------
+echo Formated_hours: $Formated_hours
+echo formated_minutes: $formated_minutes
+echo formated_seconds: $formated_seconds
+echo ---------------------------------------------
+
+
+
+echo Complete Seconds elapted $Formated_hours:$formated_minutes:$formated_seconds
+#unmount <mounted foleder>
+
+# let hoursCal = seconds / 3600
+# let min = seconds % 3600
+# let minutes = min / 60
+# let totalSeconds = min % 60
+# print("\(hoursCal) hours \n\(minutes) minutes \n\(totalSeconds) seconds")
+
