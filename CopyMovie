@@ -1,0 +1,27 @@
+#!/bin/zsh
+. Functions/format_time.sh
+
+mountPath="~/Volumes"
+sourcePath="Volumes/video"
+destinationPath="/Volumes/TimeMachineExternal/Video"
+action="Action"
+horror="Horror"
+comedy="Comedy"
+
+
+# echo mount path: $mountPath
+# echo sourcePath: $sourcePath
+# echo destinationPath: $destinationPath
+
+#mount_smbfs //tmUser:ZuVxwEZdykTVRPp3vj@FAKEMEDIA/video ~/Volumes/video
+
+# echo Starting  folder
+SECONDS=0
+echo Starting $action folder
+rsync -rv ~/$sourcePath/$action/ $destinationPath/$action/
+echo Starting $horror folder
+rsync -rv ~/$sourcePath/$horror/ $destinationPath/$horror/
+echo Starting $comedy folder
+rsync -rv ~/$sourcePath/$comedy/ $destinationPath/$comedy/
+
+echo Completed runtime: $(format_time $SECONDS)
