@@ -1,0 +1,27 @@
+#!/bin/zsh
+basePath=/Volumes/Lightroom\ Photos/NewLightroom
+
+for year in {1..9}
+do
+    $(mkdir "$basePath"/199$year)
+    echo Created folder $basePath/199$year
+
+    $(mkdir "$basePath"/200$year)
+    echo Created folder $basePath/200$year
+
+    $(mkdir "$basePath"/201$year)
+    echo Created folder $basePath/201$year
+
+    $(mkdir "$basePath"/202$year)
+    echo Created folder $basePath/202$year
+
+done
+
+for folder in "$basePath"/*
+do
+    for month in {01..12}
+    do
+        $(mkdir "$folder"/$month)
+        echo Created folder $folder/$month
+    done
+done
