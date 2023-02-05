@@ -1,0 +1,19 @@
+#!/bin/zsh
+./Functions/format_time.sh
+
+destinationPath="/Volumes/Lightroom/LightroomBackup"
+
+movie="Movies"
+picture="Pictures"
+#mount_smbfs $sourcePath/Developer /Volumes/TimeMachineExternal/xenomorph/Developer
+echo Starting  folder
+SECONDS=0
+
+echo Starting $movie folder
+rsync -rvu ~/$movie/Lightroom $destinationPath/$movie/
+
+echo Starting $picture folder
+rsync -rvu ~/$picture/ $destinationPath/$picture/
+# cp ~/.zsh* $destinationPath/
+
+echo Completed runtime: $(format_time $SECONDS)
