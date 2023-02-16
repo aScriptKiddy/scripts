@@ -1,0 +1,10 @@
+rm -fv /Library/LaunchDaemons/com.bombich.ccchelper.plist
+rm -fv ~/xenomorph/Library/Application Support/com.bombich.ccc
+rm -fv ~/xenomorph/Library/Caches/com.bombich.ccc
+rm -fv ~/xenomorph/Library/Caches/com.bombich.ccc.useragent
+rm -fv ~/xenomorph/Library/Preferences/com.bombich.ccc.plist
+rm -fv /Library/Application Support/com.bombich.ccc
+rm -fv /Library/PrivilegedHelperTools/com.bombich.ccchelper
+rm -fv ~/xenomorph/Library/Application Support/CCC Stats Service
+rm -fv ~/xenomorph/Library/Caches/com.bombich.ccc.stats
+rm -fv ~/xenomorph/Library/Cookies/com.bombich.ccc.binarycookies

@@ -1,6 +1,7 @@
 #!/bin/zsh
 . Functions/format_time.sh
 
+
 mountPath="~/Volumes"
 sourcePath="Volumes/video"
 destinationPath="/Volumes/TimeMachineExternal/Video"

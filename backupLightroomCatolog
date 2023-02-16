@@ -1,0 +1,30 @@
+#!/bin/zsh
+./Functions/format_time.sh
+
+# sourcePath="/Users/xenomorph/"
+
+sourcePath="/Users/xenomorph/Pictures/LightroomCatalogs/"
+dsetinationSsdPath="/Volumes/NAS/images/LightroomCatalogs/"
+
+# sourceImagePath="/Users/xenomorph/Pictures/"
+# sourceMoviePath="/Users/xenomorph/Movies/"
+
+# mount_smbfs $sourcePath/Developer /Volumes/TimeMachineExternal/xenomorph/Developer
+echo Starting Sync
+SECONDS=0
+
+# syncing SSD 
+echo Syncing from local to NAS
+# cp -frvn $sourceNasPath $dsetinationSsdPath
+rsync -av $sourcePath $dsetinationSsdPath
+
+# echo Starting Pictures folder
+# rsync -rvu $sourcePath/Movies $ssdBackupPath/Lightroom/Movies
+
+# Syncing NAS
+
+# echo Starting Picture folder
+# rsync -rvu ~/$picture/ $destinationPath/$picture/
+# cp ~/.zsh* $destinationPath/
+
+echo Completed runtime: format_time $SECONDS

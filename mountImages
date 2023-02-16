@@ -1,0 +1,21 @@
+#!/bin/zsh
+#Get the password out of the keychain
+if ! tmPassword=$(security 2> /dev/null find-generic-password -w -a 'tmUser' -s 'NasUser')
+then
+  echo "could not get password, error $?"
+  exit 1
+fi 
+
+# Check so see if the folder exists if if does not create it.
+if ! ls /Volumes/NAS | grep 'images'
+then
+    mkdir /Volumes/NAS/images
+fi 
+
+# Check and see if the NAS images share is mounted if not mount it.
+if ! df -m | grep 'FAKEMEDIA/images'
+then 
+    mount_smbfs //tmUser:$tmPassword@FAKEMEDIA/images /Volumes/NAS/images
+else
+    echo images is mounted
+fi
