@@ -1,10 +1,22 @@
 #!/bin/zsh
-./Functions/format_time.sh
+#./Functions/format_time.sh
+
+format_time() {
+    local remanderMinutes=$(($1 % 3600))
+    local remander_seconds=$(($remanderMinutes % 60))
+
+    local Formated_hours=$(printf '%02d' $(($1 / 3600)))
+    local formated_minutes=$(printf '%02d' $(($remanderMinutes / 60)))
+    local formated_seconds=$(printf '%02d' $(($remander_seconds % 60)))
+
+    echo $Formated_hours:$formated_minutes:$formated_seconds
+}
 
 # sourcePath="/Users/xenomorph/"
-
-sourcePath="/Users/xenomorph/Pictures/LightroomCatalogs/"
-dsetinationSsdPath="/Volumes/NAS/images/LightroomCatalogs/"
+nasDestinationPath="/Volumes/Images/Lightroom"
+sourcePicturesPath="/Users/xenomorph/Pictures/"
+sourceVideosPath="/Users/xenomorph/Movies/"
+dsetinationSsdPicturePath="/Volumes/LightroomBak"
 
 # sourceImagePath="/Users/xenomorph/Pictures/"
 # sourceMoviePath="/Users/xenomorph/Movies/"
@@ -14,10 +26,33 @@ echo Starting Sync
 SECONDS=0
 
 # syncing SSD 
-echo Syncing from local to NAS
+echo Syncing from local to SSD
+echo *********************************************
 # cp -frvn $sourceNasPath $dsetinationSsdPath
-rsync -av $sourcePath $dsetinationSsdPath
+rsync -av --delete $sourcePicturesPath $dsetinationSsdPicturePath/Pictures
 
+echo *********************************************
+echo Picture copy completed
+echo *********************************************
+echo Movie copy starting
+echo *********************************************
+
+rsync -av --delete $sourceVideosPath $dsetinationSsdPicturePath/Movies
+
+echo *********************************************
+echo Movie copy completed
+echo *********************************************
+echo syncing movies on NAS
+echo *********************************************
+
+rsync -av $sourceVideosPath $nasDestinationPath/Movies
+
+echo *********************************************
+echo NAS movie copy completed
+echo *********************************************
+
+# cp -Rnav $sourcePicturesPath $dsetinationSsdPicturePath/Pictures
+# cp -Rnav $sourceVideosPath $dsetinationSsdPicturePath/Movies
 # echo Starting Pictures folder
 # rsync -rvu $sourcePath/Movies $ssdBackupPath/Lightroom/Movies
 
@@ -26,5 +61,8 @@ rsync -av $sourcePath $dsetinationSsdPath
 # echo Starting Picture folder
 # rsync -rvu ~/$picture/ $destinationPath/$picture/
 # cp ~/.zsh* $destinationPath/
-
-echo Completed runtime: format_time $SECONDS
+# echo Seconds $SECONDS
+#formatedTime=format_time $SECONDS
+echo *********************************************
+echo Completed runtime: $(format_time $SECONDS)
+echo *********************************************
