@@ -11,45 +11,81 @@ format_time() {
 
     echo $Formated_hours:$formated_minutes:$formated_seconds
 }
+# echo "Do you want to backup first drive (y/N)"
+# read backupDevice
 
-# sourcePath="/Users/xenomorph/"
 nasDestinationPath="/Volumes/Images/Lightroom"
 sourcePicturesPath="/Users/xenomorph/Pictures/"
-sourceVideosPath="/Users/xenomorph/Movies/"
-dsetinationSsdPicturePath="/Volumes/LightroomBak"
+sourceVideosPath="/Users/xenomorph/Movies"
+destinationSsdPicturePath="/Volumes/LightroomBak"
+
+# i 
 
 # sourceImagePath="/Users/xenomorph/Pictures/"
 # sourceMoviePath="/Users/xenomorph/Movies/"
-
+# echo "Do you want to back up NAS (y/N)"
+# read includeNas 
 # mount_smbfs $sourcePath/Developer /Volumes/TimeMachineExternal/xenomorph/Developer
-echo Starting Sync
+echo "---------------------------------------------"
+echo "---------------------------------------------"
+echo "Mounting drive and starting Sync"
+echo "---------------------------------------------"
+echo "---------------------------------------------"
 SECONDS=0
+diskutil mount LightroomBak
 
 # syncing SSD 
-echo Syncing from local to SSD
-echo *********************************************
+echo "---------------------------------------------"
+echo "Syncing from local to SSD"
+echo "---------------------------------------------"
 # cp -frvn $sourceNasPath $dsetinationSsdPath
-rsync -av --delete $sourcePicturesPath $dsetinationSsdPicturePath/Pictures
+rsync -av --delete $sourcePicturesPath $destinationSsdPicturePath/Pictures
+# cp -fanvR $sourcePicturesPath $destinationSsdPicturePath/Pictures
 
-echo *********************************************
-echo Picture copy completed
-echo *********************************************
-echo Movie copy starting
-echo *********************************************
+echo "---------------------------------------------"
+echo "Picture copy completed"
+echo "---------------------------------------------"
+echo "Movie copy starting"
+echo "---------------------------------------------"
 
-rsync -av --delete $sourceVideosPath $dsetinationSsdPicturePath/Movies
+rsync -av --delete $sourceVideosPath/CanonR5/ $destinationSsdPicturePath/Movies/CanonR5
+rsync -av --delete $sourceVideosPath/Davinci\ Resolve/ $destinationSsdPicturePath/Movies/Davinci\ Resolve
+rsync -av --delete $sourceVideosPath/EditVideos/ $destinationSsdPicturePath/Movies/EditVideos
+rsync -av --delete $sourceVideosPath/Lightroom/ $destinationSsdPicturePath/Movies/Lightroom
+# cp -fanvR $sourceVideosPath/CanonR5/ $destinationSsdPicturePath/Movies/CanonR5
+# cp -fanvR $sourceVideosPath/Davinci\ Resolve/ $destinationSsdPicturePath/Movies/Davinci\ Resolve
+# cp -fanvR $sourceVideosPath/EditVideos/ $destinationSsdPicturePath/Movies/EditVideos
+# cp -fanvR $sourceVideosPath/Lightroom/ $destinationSsdPicturePath/Movies/Lightroom
 
-echo *********************************************
-echo Movie copy completed
-echo *********************************************
-echo syncing movies on NAS
-echo *********************************************
+echo "---------------------------------------------"
+echo "Movie copy completed"
+echo "---------------------------------------------"
 
-rsync -av $sourceVideosPath $nasDestinationPath/Movies
+# if [[ $includeNas == "Y" || $includeNas == "y" ]]
+# then
+# echo ---------------------------------------------
+# echo Movie copy completed
+# echo ---------------------------------------------
+# echo syncing Photos on NAS
+# echo ---------------------------------------------
 
-echo *********************************************
-echo NAS movie copy completed
-echo *********************************************
+# rsync -av $sourcePicturesPath $nasDestinationPath/Pictures
+
+# # echo ---------------------------------------------
+# # echo Movie copy completed
+# # echo ---------------------------------------------
+# # echo syncing movies on NAS
+# # echo ---------------------------------------------
+
+# # rsync -av $sourceVideosPath $nasDestinationPath/Movies
+
+# # echo ---------------------------------------------
+# echo ---------------------------------------------
+# echo NAS movie copy completed
+# echo ---------------------------------------------
+# echo ---------------------------------------------
+# fi
+
 
 # cp -Rnav $sourcePicturesPath $dsetinationSsdPicturePath/Pictures
 # cp -Rnav $sourceVideosPath $dsetinationSsdPicturePath/Movies
@@ -63,6 +99,12 @@ echo *********************************************
 # cp ~/.zsh* $destinationPath/
 # echo Seconds $SECONDS
 #formatedTime=format_time $SECONDS
-echo *********************************************
-echo Completed runtime: $(format_time $SECONDS)
-echo *********************************************
+echo "---------------------------------------------"
+echo "Completed runtime: $(format_time $SECONDS)"
+echo "Source image count: \t\t$(ls -1R ~/Pictures|wc -l)"
+echo "Destination image count: \t$(ls -1R /Volumes/LightroomBak/Pictures|wc -l)"
+echo "Source video count: \t \t$(ls -1R ~/Movies|wc -l)"
+echo "Destination video count: \t$(ls -1R /Volumes/LightroomBak/Movies|wc -l)"
+echo "---------------------------------------------"
+
+diskutil eject LightroomBak
