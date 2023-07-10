@@ -11,36 +11,28 @@ format_time() {
 
     echo $Formated_hours:$formated_minutes:$formated_seconds
 }
-# echo "Do you want to backup first drive (y/N)"
-# read backupDevice
 
-nasDestinationPath="/Volumes/Images/Lightroom"
+nasDestinationPath="/Volumes/NAS-Lightroom/Lightroom"
 sourcePicturesPath="/Users/xenomorph/Pictures/"
 sourceVideosPath="/Users/xenomorph/Movies"
 destinationSsdPicturePath="/Volumes/LightroomBak"
 
-# i 
-
-# sourceImagePath="/Users/xenomorph/Pictures/"
-# sourceMoviePath="/Users/xenomorph/Movies/"
-# echo "Do you want to back up NAS (y/N)"
-# read includeNas 
+echo "Do you want to back up NAS (y/N)"
+read includeNas 
 # mount_smbfs $sourcePath/Developer /Volumes/TimeMachineExternal/xenomorph/Developer
+
 echo "---------------------------------------------"
 echo "---------------------------------------------"
 echo "Mounting drive and starting Sync"
 echo "---------------------------------------------"
 echo "---------------------------------------------"
 SECONDS=0
-diskutil mount LightroomBak
+# diskutil mount LightroomBak
 
-# syncing SSD 
 echo "---------------------------------------------"
 echo "Syncing from local to SSD"
 echo "---------------------------------------------"
-# cp -frvn $sourceNasPath $dsetinationSsdPath
 rsync -av --delete $sourcePicturesPath $destinationSsdPicturePath/Pictures
-# cp -fanvR $sourcePicturesPath $destinationSsdPicturePath/Pictures
 
 echo "---------------------------------------------"
 echo "Picture copy completed"
@@ -61,44 +53,22 @@ echo "---------------------------------------------"
 echo "Movie copy completed"
 echo "---------------------------------------------"
 
-# if [[ $includeNas == "Y" || $includeNas == "y" ]]
-# then
-# echo ---------------------------------------------
-# echo Movie copy completed
-# echo ---------------------------------------------
-# echo syncing Photos on NAS
-# echo ---------------------------------------------
+if [[ $includeNas == "Y" || $includeNas == "y" ]]
+then
 
-# rsync -av $sourcePicturesPath $nasDestinationPath/Pictures
+echo "---------------------------------------------"
+echo "Syncing movies on NAS"
+echo "---------------------------------------------"
 
-# # echo ---------------------------------------------
-# # echo Movie copy completed
-# # echo ---------------------------------------------
-# # echo syncing movies on NAS
-# # echo ---------------------------------------------
+rsync -av $sourceVideosPath $nasDestinationPath/Movies
 
-# # rsync -av $sourceVideosPath $nasDestinationPath/Movies
+echo "---------------------------------------------"
+echo "---------------------------------------------"
+echo "NAS movie copy completed"
+echo "---------------------------------------------"
+echo "---------------------------------------------"
+fi
 
-# # echo ---------------------------------------------
-# echo ---------------------------------------------
-# echo NAS movie copy completed
-# echo ---------------------------------------------
-# echo ---------------------------------------------
-# fi
-
-
-# cp -Rnav $sourcePicturesPath $dsetinationSsdPicturePath/Pictures
-# cp -Rnav $sourceVideosPath $dsetinationSsdPicturePath/Movies
-# echo Starting Pictures folder
-# rsync -rvu $sourcePath/Movies $ssdBackupPath/Lightroom/Movies
-
-# Syncing NAS
-
-# echo Starting Picture folder
-# rsync -rvu ~/$picture/ $destinationPath/$picture/
-# cp ~/.zsh* $destinationPath/
-# echo Seconds $SECONDS
-#formatedTime=format_time $SECONDS
 echo "---------------------------------------------"
 echo "Completed runtime: $(format_time $SECONDS)"
 echo "Source image count: \t\t$(ls -1R ~/Pictures|wc -l)"
