@@ -1,0 +1,7 @@
+#!/bin/zsh
+# Uninstall DxO PhotoLab
+sudo rm -rf /Applications/DxO\ PhotoLab\ 4.app
+sudo rm -rf ~/Library/Application\ Support/DxO\ PhotoLab\ 4
+sudo rm -rf ~/Library/Caches/com.dxo.PhotoLab4
+sudo rm -rf ~/Library/Preferences/com.dxo.PhotoLab4.plist
+sudo rm -rf /Users/xenomorph/Library/DxO\ PhotoLab\ v6

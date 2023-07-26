@@ -12,13 +12,10 @@ format_time() {
     echo $Formated_hours:$formated_minutes:$formated_seconds
 }
 
-nasDestinationPath="/Volumes/NAS-Lightroom/Lightroom"
-sourcePicturesPath="/Users/xenomorph/Pictures/"
-sourceVideosPath="/Users/xenomorph/Movies"
-destinationSsdPicturePath="/Volumes/LightroomBak"
-
-echo "Do you want to back up NAS (y/N)"
-read includeNas 
+nasCatalogPath="/Volumes/NAS-Lightroom/LightroomCatalogs/"
+sourceCatalogPath="/Users/xenomorph/Pictures/LightroomCatalogs/"
+# echo "Do you want to back up NAS (y/N)"
+# read includeNas 
 # mount_smbfs $sourcePath/Developer /Volumes/TimeMachineExternal/xenomorph/Developer
 
 echo "---------------------------------------------"
@@ -30,44 +27,15 @@ SECONDS=0
 # diskutil mount LightroomBak
 
 echo "---------------------------------------------"
-echo "Syncing from local to SSD"
-echo "---------------------------------------------"
-rsync -av --delete $sourcePicturesPath $destinationSsdPicturePath/Pictures
-
-echo "---------------------------------------------"
-echo "Picture copy completed"
-echo "---------------------------------------------"
-echo "Movie copy starting"
+echo "Syncing Lightroom Catalog Backup"
 echo "---------------------------------------------"
 
-rsync -av --delete $sourceVideosPath/CanonR5/ $destinationSsdPicturePath/Movies/CanonR5
-rsync -av --delete $sourceVideosPath/Davinci\ Resolve/ $destinationSsdPicturePath/Movies/Davinci\ Resolve
-rsync -av --delete $sourceVideosPath/EditVideos/ $destinationSsdPicturePath/Movies/EditVideos
-rsync -av --delete $sourceVideosPath/Lightroom/ $destinationSsdPicturePath/Movies/Lightroom
-# cp -fanvR $sourceVideosPath/CanonR5/ $destinationSsdPicturePath/Movies/CanonR5
-# cp -fanvR $sourceVideosPath/Davinci\ Resolve/ $destinationSsdPicturePath/Movies/Davinci\ Resolve
-# cp -fanvR $sourceVideosPath/EditVideos/ $destinationSsdPicturePath/Movies/EditVideos
-# cp -fanvR $sourceVideosPath/Lightroom/ $destinationSsdPicturePath/Movies/Lightroom
+rsync -av --delete $sourceCatalogPath $nasCatalogPath
 
 echo "---------------------------------------------"
-echo "Movie copy completed"
+echo "Syncing Lightroom Catalog Backup"
 echo "---------------------------------------------"
 
-if [[ $includeNas == "Y" || $includeNas == "y" ]]
-then
-
-echo "---------------------------------------------"
-echo "Syncing movies on NAS"
-echo "---------------------------------------------"
-
-rsync -av $sourceVideosPath $nasDestinationPath/Movies
-
-echo "---------------------------------------------"
-echo "---------------------------------------------"
-echo "NAS movie copy completed"
-echo "---------------------------------------------"
-echo "---------------------------------------------"
-fi
 
 echo "---------------------------------------------"
 echo "Completed runtime: $(format_time $SECONDS)"
