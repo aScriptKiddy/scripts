@@ -12,17 +12,17 @@ format_time() {
     echo $Formated_hours:$formated_minutes:$formated_seconds
 }
 
-nasCatalogPath="/Volumes/NAS-Lightroom/LightroomCatalogs/"
+nasCatalogPath="/Volumes/Photography/LightroomCatalogs/"
 sourceCatalogPath="/Users/xenomorph/Pictures/LightroomCatalogs/"
 # echo "Do you want to back up NAS (y/N)"
 # read includeNas 
 # mount_smbfs $sourcePath/Developer /Volumes/TimeMachineExternal/xenomorph/Developer
 
-echo "---------------------------------------------"
-echo "---------------------------------------------"
-echo "Mounting drive and starting Sync"
-echo "---------------------------------------------"
-echo "---------------------------------------------"
+# echo "---------------------------------------------"
+# echo "---------------------------------------------"
+# echo "Mounting drive and starting Sync"
+# echo "---------------------------------------------"
+# echo "---------------------------------------------"
 SECONDS=0
 # diskutil mount LightroomBak
 
@@ -33,7 +33,7 @@ echo "---------------------------------------------"
 rsync -av --delete $sourceCatalogPath $nasCatalogPath
 
 echo "---------------------------------------------"
-echo "Syncing Lightroom Catalog Backup"
+echo "Syncing Lightroom Catalog Backup Conmpleted"
 echo "---------------------------------------------"
 
 
@@ -45,4 +45,4 @@ echo "Source video count: \t \t$(ls -1R ~/Movies|wc -l)"
 echo "Destination video count: \t$(ls -1R /Volumes/LightroomBak/Movies|wc -l)"
 echo "---------------------------------------------"
 
-diskutil eject LightroomBak
+# diskutil eject LightroomBak

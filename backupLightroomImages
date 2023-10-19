@@ -13,26 +13,22 @@ format_time() {
 }
 
 nasDestinationPath="/Volumes/NAS-Lightroom/Lightroom"
-sourcePicturesPath="/Users/xenomorph/Pictures/"
+sourcePicturesPath="/Users/xenomorph/Pictures/Lightroom/"
 sourceVideosPath="/Users/xenomorph/Movies"
 destinationSsdPicturePath="/Volumes/LightroomBak"
 
-echo "Do you want to back up NAS (y/N)"
-read includeNas 
+# echo "Do you want to back up NAS (y/N)"
+# read includeNas 
 # mount_smbfs $sourcePath/Developer /Volumes/TimeMachineExternal/xenomorph/Developer
 
-echo "---------------------------------------------"
-echo "---------------------------------------------"
-echo "Mounting drive and starting Sync"
-echo "---------------------------------------------"
-echo "---------------------------------------------"
+# ec---------------------------------------"
 SECONDS=0
 # diskutil mount LightroomBak
 
 echo "---------------------------------------------"
 echo "Syncing from local to SSD"
 echo "---------------------------------------------"
-rsync -av --delete $sourcePicturesPath $destinationSsdPicturePath/Pictures
+rsync -av --delete $sourcePicturesPath $destinationSsdPicturePath/Pictures/Lightroom
 # cp -fanvR $sourcePicturesPath $destinationSsdPicturePath/Pictures
 
 # echo "---------------------------------------------"
