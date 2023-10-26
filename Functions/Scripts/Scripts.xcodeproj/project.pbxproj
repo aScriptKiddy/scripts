@@ -1,0 +1,170 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXFileReference section */
+		430901E02AEA31E7004B605C /* backupLightroomCatolog */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = backupLightroomCatolog; path = ../../backupLightroomCatolog; sourceTree = "<group>"; };
+		430901E22AEA3215004B605C /* format_time.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = format_time.sh; sourceTree = "<group>"; };
+		430901E42AEA3215004B605C /* Scripts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Scripts.xcodeproj; sourceTree = "<group>"; };
+		430901E82AEA322C004B605C /* CopyLocalMovies.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = CopyLocalMovies.cmd; sourceTree = "<group>"; };
+		430901E92AEA322C004B605C /* RemoveStringsInfile.ps1 */ = {isa = PBXFileReference; lastKnownFileType = text; path = RemoveStringsInfile.ps1; sourceTree = "<group>"; };
+		430901EA2AEA322C004B605C /* Copy Videos to External to Exteranal.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Copy Videos to External to Exteranal.cmd"; sourceTree = "<group>"; };
+		430901EB2AEA322C004B605C /* Start SQL Server.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Start SQL Server.cmd"; sourceTree = "<group>"; };
+		430901EC2AEA322C004B605C /* 2_Sync Movies from NAS To Backup.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2_Sync Movies from NAS To Backup.cmd"; sourceTree = "<group>"; };
+		430901ED2AEA322C004B605C /* ChristoMovieCopy.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = ChristoMovieCopy.cmd; sourceTree = "<group>"; };
+		430901EE2AEA322C004B605C /* Stop SQL Service.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Stop SQL Service.cmd"; sourceTree = "<group>"; };
+		430901EF2AEA322C004B605C /* Copy Music to External.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Copy Music to External.cmd"; sourceTree = "<group>"; };
+		430901F02AEA322C004B605C /* Copy Pictures.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Copy Pictures.cmd"; sourceTree = "<group>"; };
+		430901F12AEA322C004B605C /* BackupComputer.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = BackupComputer.cmd; sourceTree = "<group>"; };
+		430901F22AEA322C004B605C /* 1_Copy Movies.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1_Copy Movies.cmd"; sourceTree = "<group>"; };
+		430901F32AEA322C004B605C /* DONT USE Copy Movies Sync.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DONT USE Copy Movies Sync.cmd"; sourceTree = "<group>"; };
+		430901F42AEA322C004B605C /* Copy Photos to Laptop.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Copy Photos to Laptop.cmd"; sourceTree = "<group>"; };
+		430901F52AEA322C004B605C /* Create image nework mapping.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Create image nework mapping.cmd"; sourceTree = "<group>"; };
+		430901F62AEA322C004B605C /* Nightly Copy Movies.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Nightly Copy Movies.cmd"; sourceTree = "<group>"; };
+		430901F72AEA322C004B605C /* CopyPhotos.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = CopyPhotos.cmd; sourceTree = "<group>"; };
+		430901F82AEA322C004B605C /* SyncPhotos.cmd */ = {isa = PBXFileReference; lastKnownFileType = text; path = SyncPhotos.cmd; sourceTree = "<group>"; };
+		430901F92AEA3253004B605C /* backupLightroomImagesMovie */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = backupLightroomImagesMovie; path = ../../backupLightroomImagesMovie; sourceTree = "<group>"; };
+		430901FA2AEA3253004B605C /* CopyMoviesMini */ = {isa = PBXFileReference; lastKnownFileType = text; name = CopyMoviesMini; path = ../../CopyMoviesMini; sourceTree = "<group>"; };
+		430901FB2AEA3253004B605C /* CopyMovie */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = CopyMovie; path = ../../CopyMovie; sourceTree = "<group>"; };
+		430901FC2AEA3253004B605C /* macBackup */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = macBackup; path = ../../macBackup; sourceTree = "<group>"; };
+		430901FD2AEA3253004B605C /* clearDD */ = {isa = PBXFileReference; lastKnownFileType = text; name = clearDD; path = ../../clearDD; sourceTree = "<group>"; };
+		430901FE2AEA3253004B605C /* backupLightroomImages */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = backupLightroomImages; path = ../../backupLightroomImages; sourceTree = "<group>"; };
+		430901FF2AEA3253004B605C /* bestdayever.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = bestdayever.sh; path = ../../bestdayever.sh; sourceTree = "<group>"; };
+		430902002AEA3253004B605C /* mountImages */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = mountImages; path = ../../mountImages; sourceTree = "<group>"; };
+		430902012AEA3253004B605C /* RemoveCarbonCopy */ = {isa = PBXFileReference; lastKnownFileType = text; name = RemoveCarbonCopy; path = ../../RemoveCarbonCopy; sourceTree = "<group>"; };
+		430902022AEA3253004B605C /* CreateFoldersForPhotos */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = CreateFoldersForPhotos; path = ../../CreateFoldersForPhotos; sourceTree = "<group>"; };
+		430902032AEA3253004B605C /* RemoveDxOPhotolab */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = RemoveDxOPhotolab; path = ../../RemoveDxOPhotolab; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		430901E12AEA3215004B605C /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				430901E22AEA3215004B605C /* format_time.sh */,
+			);
+			name = Functions;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		430901E32AEA3215004B605C /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				430901E42AEA3215004B605C /* Scripts.xcodeproj */,
+			);
+			name = Scripts;
+			sourceTree = "<group>";
+		};
+		430901E52AEA3215004B605C /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		430901E72AEA322C004B605C /* windows */ = {
+			isa = PBXGroup;
+			children = (
+				430901E82AEA322C004B605C /* CopyLocalMovies.cmd */,
+				430901E92AEA322C004B605C /* RemoveStringsInfile.ps1 */,
+				430901EA2AEA322C004B605C /* Copy Videos to External to Exteranal.cmd */,
+				430901EB2AEA322C004B605C /* Start SQL Server.cmd */,
+				430901EC2AEA322C004B605C /* 2_Sync Movies from NAS To Backup.cmd */,
+				430901ED2AEA322C004B605C /* ChristoMovieCopy.cmd */,
+				430901EE2AEA322C004B605C /* Stop SQL Service.cmd */,
+				430901EF2AEA322C004B605C /* Copy Music to External.cmd */,
+				430901F02AEA322C004B605C /* Copy Pictures.cmd */,
+				430901F12AEA322C004B605C /* BackupComputer.cmd */,
+				430901F22AEA322C004B605C /* 1_Copy Movies.cmd */,
+				430901F32AEA322C004B605C /* DONT USE Copy Movies Sync.cmd */,
+				430901F42AEA322C004B605C /* Copy Photos to Laptop.cmd */,
+				430901F52AEA322C004B605C /* Create image nework mapping.cmd */,
+				430901F62AEA322C004B605C /* Nightly Copy Movies.cmd */,
+				430901F72AEA322C004B605C /* CopyPhotos.cmd */,
+				430901F82AEA322C004B605C /* SyncPhotos.cmd */,
+			);
+			path = windows;
+			sourceTree = "<group>";
+		};
+		431E5B862AEA312F00C9A45D = {
+			isa = PBXGroup;
+			children = (
+				430901E12AEA3215004B605C /* Functions */,
+				430901E32AEA3215004B605C /* Scripts */,
+				430901E72AEA322C004B605C /* windows */,
+				430901FE2AEA3253004B605C /* backupLightroomImages */,
+				430901F92AEA3253004B605C /* backupLightroomImagesMovie */,
+				430901FF2AEA3253004B605C /* bestdayever.sh */,
+				430901FD2AEA3253004B605C /* clearDD */,
+				430901FB2AEA3253004B605C /* CopyMovie */,
+				430901FA2AEA3253004B605C /* CopyMoviesMini */,
+				430902022AEA3253004B605C /* CreateFoldersForPhotos */,
+				430901FC2AEA3253004B605C /* macBackup */,
+				430902002AEA3253004B605C /* mountImages */,
+				430902012AEA3253004B605C /* RemoveCarbonCopy */,
+				430902032AEA3253004B605C /* RemoveDxOPhotolab */,
+				430901E02AEA31E7004B605C /* backupLightroomCatolog */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		431E5B872AEA312F00C9A45D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 431E5B8A2AEA312F00C9A45D /* Build configuration list for PBXProject "Scripts" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 431E5B862AEA312F00C9A45D;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 430901E52AEA3215004B605C /* Products */;
+					ProjectRef = 430901E42AEA3215004B605C /* Scripts.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		431E5B8B2AEA312F00C9A45D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		431E5B8C2AEA312F00C9A45D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		431E5B8A2AEA312F00C9A45D /* Build configuration list for PBXProject "Scripts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431E5B8B2AEA312F00C9A45D /* Debug */,
+				431E5B8C2AEA312F00C9A45D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 431E5B872AEA312F00C9A45D /* Project object */;
+}

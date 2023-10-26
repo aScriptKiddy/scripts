@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 rm -fv /Library/LaunchDaemons/com.bombich.ccchelper.plist
 rm -fv ~/xenomorph/Library/Application Support/com.bombich.ccc
 rm -fv ~/xenomorph/Library/Caches/com.bombich.ccc
