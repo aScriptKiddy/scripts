@@ -1,0 +1,96 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXFileReference section */
+		43C065642B49C1B800EDC6B2 /* backupLightroomImagesMovie */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = backupLightroomImagesMovie; path = ../backupLightroomImagesMovie; sourceTree = "<group>"; };
+		43C065652B49C1B800EDC6B2 /* CopyMoviesMini */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = CopyMoviesMini; path = ../CopyMoviesMini; sourceTree = "<group>"; };
+		43C065662B49C1B800EDC6B2 /* CopyMovie */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = CopyMovie; path = ../CopyMovie; sourceTree = "<group>"; };
+		43C065672B49C1B800EDC6B2 /* RemoveDxOPhotolab */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = RemoveDxOPhotolab; path = ../RemoveDxOPhotolab; sourceTree = "<group>"; };
+		43C065682B49C1B800EDC6B2 /* backupLightroomCatolog */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = backupLightroomCatolog; path = ../backupLightroomCatolog; sourceTree = "<group>"; };
+		43C065692B49C1B800EDC6B2 /* clearDD */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = clearDD; path = ../clearDD; sourceTree = "<group>"; };
+		43C0656A2B49C1B800EDC6B2 /* macBackup */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = macBackup; path = ../macBackup; sourceTree = "<group>"; };
+		43C0656B2B49C1B800EDC6B2 /* mountImages */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = mountImages; path = ../mountImages; sourceTree = "<group>"; };
+		43C0656C2B49C1B800EDC6B2 /* RemoveCarbonCopy */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = RemoveCarbonCopy; path = ../RemoveCarbonCopy; sourceTree = "<group>"; };
+		43C0656D2B49C1B800EDC6B2 /* CreateFoldersForPhotos */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = CreateFoldersForPhotos; path = ../CreateFoldersForPhotos; sourceTree = "<group>"; };
+		43C0656E2B49C1B800EDC6B2 /* backupLightroomImages */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = backupLightroomImages; path = ../backupLightroomImages; sourceTree = "<group>"; };
+		43C0656F2B49C1B800EDC6B2 /* bestdayever.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = bestdayever.sh; path = ../bestdayever.sh; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		43C0655D2B49C19800EDC6B2 = {
+			isa = PBXGroup;
+			children = (
+				43C065682B49C1B800EDC6B2 /* backupLightroomCatolog */,
+				43C0656E2B49C1B800EDC6B2 /* backupLightroomImages */,
+				43C065642B49C1B800EDC6B2 /* backupLightroomImagesMovie */,
+				43C0656F2B49C1B800EDC6B2 /* bestdayever.sh */,
+				43C065692B49C1B800EDC6B2 /* clearDD */,
+				43C065662B49C1B800EDC6B2 /* CopyMovie */,
+				43C065652B49C1B800EDC6B2 /* CopyMoviesMini */,
+				43C0656D2B49C1B800EDC6B2 /* CreateFoldersForPhotos */,
+				43C0656A2B49C1B800EDC6B2 /* macBackup */,
+				43C0656B2B49C1B800EDC6B2 /* mountImages */,
+				43C0656C2B49C1B800EDC6B2 /* RemoveCarbonCopy */,
+				43C065672B49C1B800EDC6B2 /* RemoveDxOPhotolab */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		43C0655E2B49C19800EDC6B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1510;
+			};
+			buildConfigurationList = 43C065612B49C19800EDC6B2 /* Build configuration list for PBXProject "Scripts" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43C0655D2B49C19800EDC6B2;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		43C065622B49C19800EDC6B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		43C065632B49C19800EDC6B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43C065612B49C19800EDC6B2 /* Build configuration list for PBXProject "Scripts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43C065622B49C19800EDC6B2 /* Debug */,
+				43C065632B49C19800EDC6B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 43C0655E2B49C19800EDC6B2 /* Project object */;
+}
