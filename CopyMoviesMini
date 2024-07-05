@@ -22,4 +22,3 @@ echo '******************************'
 
 cp -afRvn /Users/jeffsmith/Torrents/ToCopy/ /Volumes/video/
 cp -afRvn /Users/jeffsmith/Torrents/ToCopy/ /Volumes/BackupExtHD/Videos/
-
