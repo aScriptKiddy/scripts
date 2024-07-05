@@ -1,1 +1,3 @@
+#!/bin/zsh
+
 rm -frv ~/Library/Developer/Xcode/DerivedData/
