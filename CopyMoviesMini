@@ -1,18 +1,20 @@
 echo '******************************'
 echo '*     copy to main NAS       *'
 echo '******************************'
-rsync -avru --progress --exclude='.DS_Store' /Users/jeffsmith/Torrents/ToCopy/ /Volumes/video/
-
+MovieCopy= rsync -avru --progress --exclude='.DS_Store' /Users/jeffsmith/Torrents/ToCopy/ /Volumes/video/
+echo $MovieCopy
 echo '******************************'
 echo '*  copy to backup Ext drive  *'
 echo '******************************'
-rsync -avru --progress --exclude='.DS_Store' /Users/jeffsmith/Torrents/ToCopy/ /Volumes/BackupExtHD/Videos/
+BackupCopy= rsync -avru --progress --exclude='.DS_Store' /Users/jeffsmith/Torrents/ToCopy/ /Volumes/BackupExtHD/Videos/
 
-echo '******************************'
-echo '*       Deleting Files       *'
-echo '******************************'
-find ~/Torrents/ToCopy -type f -print0 | xargs -0 rm -r
+echo $BackupCopy
+# echo '******************************'
+# echo '*       Deleting Files       *'
+# echo '******************************'
+# find ~/Torrents/ToCopy -type f -print0 | xargs -0 rm -r
 
 echo '******************************'
 echo '*          Done              *'
 echo '******************************'
+
